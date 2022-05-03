@@ -1,0 +1,19 @@
+type Snippet {
+  _id: ID!
+  text: String!
+  title: String!
+}
+
+type Query {
+  snippet(_id: ID!): Snippet!
+  snippets: [Snippet!]!
+}
+
+input SnippetInput {
+  text: String!
+  title: String!
+}
+
+type Mutation {
+  createSnippet(input: SnippetInput): Snippet!
+}
